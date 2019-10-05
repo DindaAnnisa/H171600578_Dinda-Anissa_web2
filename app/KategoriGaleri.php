@@ -8,7 +8,5 @@ class KategoriGaleri extends Model
 {
     protected $table='kategori_galeri';
 
-    protected $fillabel = [
-	'nama','user_id',
-    ];
+    protected $fillable= ['nama','users_id',];
 }

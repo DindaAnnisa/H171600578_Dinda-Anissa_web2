@@ -6,9 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Artikel extends Model
 {
-    protected $table='artikel';
+    protected $table ='artikel';
 
-    protected $fillabel = [
-	'nama','user_id',
-    ];
+    protected $fillable = ['judul','isi','users_id','kategori_artikel_id'];
 }

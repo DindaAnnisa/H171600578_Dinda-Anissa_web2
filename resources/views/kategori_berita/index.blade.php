@@ -5,37 +5,31 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header text-center bg-success" button class="btn btn-success">Kategori Berita</div> 
                 <div class="card-body">
-             
-<body>
-		<table border="1">
-
-		<tittle>Kategori Berita</tittle>
-			<tr>
-				<td>Id</td>
-				<td>Nama</td>
-				<td>Users id</td>
-
-
-              </div>
-             </div>
-            </div>
-
-
-		
-
-			</tr>
-		@foreach($kategoriBerita as $item)
-		<tr>
-			<td>{!! $item->id !!}</td>
-			<td>{!! $item->nama !!}</td>
-			<td>{!! $item->users_id !!}</td>
-		</tr>
-	
-		@endforeach
-		
-		</table>
-		</div>
-
-		@endsection
+                <table class="table table-bordered">
+                    <thead class="bg-primary">
+                        <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">User_id</th>
+                        <th scope="col">Create</th>
+                        <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach( $KategoriBerita as $item)
+                        <tr>
+                        <td>{!! $item->id !!}</td>
+                        <td>{!! $item->nama !!}</td>
+                        <td>{!! $item->users_id !!}</td>
+                        <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
+                        <td>
+                            <a href ="index.php?p=tang" button class="btn btn-danger" type="button"> Hapus </button></a> 
+                            <a href="{!! route('kategori_berita.show',[$item-> id]) !!}" button class="btn btn-dark">Lihat</a>
+                        </td>
+                        @endforeach
+                        <a href ="{!! route('kategori_berita.create',[$item->id]) !!}" button class="btn btn-warning" type="button"> Tambah </button></td></a>
+                    </tbody>
+                </table>
+        @endsection

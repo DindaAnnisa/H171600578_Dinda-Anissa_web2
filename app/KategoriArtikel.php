@@ -8,7 +8,5 @@ class KategoriArtikel extends Model
 {
     protected $table='kategori_artikel';
 
-    protected $fillabel = [
-	'nama','user_id',
-    ];
+    protected $fillable= ['nama','users_id',];
 }

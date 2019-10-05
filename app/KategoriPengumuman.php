@@ -8,7 +8,5 @@ class KategoriPengumuman extends Model
 {
     protected $table='kategori_pengumuman';
 
-    protected $fillabel = [
-	'nama','user_id',
-    ];
+    protected $fillable= ['nama','users_id',];
 }

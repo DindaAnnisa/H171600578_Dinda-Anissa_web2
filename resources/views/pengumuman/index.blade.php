@@ -5,34 +5,42 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header text-center bg-info" button class="btn btn-primary">List Pengumuman</div> 
                 <div class="card-body">
-             
-<body>
-		<table border="1">
+                              <div class="col text-center">
+                <table class="table table-bordered">
+                    <thead class ="bg-warning">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Judul</th>
+                                <th scope="col">Isi</th>
+                                <th scope="col">Kategori Pengumuman Id</th>
+                                <th scope="col">Aksi</th>
+                            </tr>
+                    </thead>
+                    <tbody>
 
-		<tittle>Pengumuman</tittle>
-			<tr>
-				<td>Id</td>
-				<td>Nama</td>
-				<td>Users id</td>
+                        @foreach ($pengumuman as $item)
+                            <tr>
+                            <td>{!! $item->id !!}</td>
+                            <td>{!! $item->judul !!}</td>
+                            <td>{!! $item->isi !!}</td>
+                            <td>{!! $item->kategori_pengumuman_id !!}</td>
+                            <td>
+                            <a href ="{!! route('pengumuman.show',[$item->id]) !!}" button class="btn btn-sm btn-danger" type="button"> Hapus </button></a> 
+                            <a href="{!! route('pengumuman.show',[$item->id]) !!}" button class="btn btn-sm btn-success" type="button"> Lihat </td></a>
 
+                                </td>
+                            </tr>
 
-              </div>
-             </div>
+                        @endforeach
+                    </tbody>
+                    </table>
+                </div>
+                
             </div>
-            
-		</tr>
-		@foreach($Pengumuman as $item)
-		<tr>
-			<td>{!! $item->id !!}</td>
-			<td>{!! $item->nama !!}</td>
-			<td>{!! $item->users_id !!}</td>
-		</tr>
-	
-		@endforeach
-		
-		</table>
-		</div>
-
-		@endsection
+         <a href ="{!! route('pengumuman.create',[$item->id]) !!}" button class="btn btn-primary" type="button"> Tambah </button></td></a>
+        </div>
+    </div>
+</div>
+@endsection
