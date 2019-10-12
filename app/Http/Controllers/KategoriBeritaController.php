@@ -7,21 +7,32 @@ use App\KategoriBerita;
 
 class KategoriBeritaController extends Controller
 {
-    function index(){
+
+   public function index()
+    {
         $KategoriBerita=KategoriBerita::all();
-        return view('kategori_berita.index',compact ('KategoriBerita'));
+
+        return view('kategori_berita.index',compact('KategoriBerita'));
     }
 
-    public function show($id){
+    public function show($id)
+    {
+
         $KategoriBerita=KategoriBerita::find($id);
 
-        return view('kategori_berita.show',compact('KategoriBerita'));
+        if (empty($KategoriBerita))
+         {
+        return redirect(route('kategori_berita.index'));
+      }
+
+        return view(  'kategori_berita.show',compact('KategoriBerita'));
     }
 
     public function create()
     {
       return view( 'kategori_berita.create');
     }
+
     public function store(Request $request)
     {
       $input= $request->all();
@@ -29,4 +40,49 @@ class KategoriBeritaController extends Controller
 
       return redirect(route('kategori_berita.index'));
     }
-}
+
+    public function edit($id) 
+    {
+      $KategoriBerita=KategoriBerita::find($id);
+
+      if (empty($KategoriBerita)) 
+      {
+        return redirect(route('kategori_berita.index'));
+      }
+        return view( 'kategori_berita.edit', compact('KategoriBerita'));
+      }
+
+      public function update($id,Request $request)
+      {
+        $KategoriBerita=KategoriBerita::find($id);
+        $input= $request->all();
+
+        if (empty($KategoriBerita))
+        {
+          return redirect(route('kategori_berita.index'));
+        }
+
+        $KategoriBerita->update($input);
+        return redirect(route('kategori_berita.index'));
+      }
+
+      public function destroy($id) 
+    {
+      $KategoriBerita=KategoriBerita::find($id);
+
+      if (empty($KategoriBerita)) 
+      {
+        return redirect(route('kategori_berita.index'));
+      }
+      $KategoriBerita->delete();
+      return redirect(route('kategori_berita.index'));
+    }
+    public function trash()
+    {
+        $KategoriBerita=KategoriBerita::onlyTrashed()
+        ->whereNotNull('deleted_at')
+        ->get();
+        
+        return view('kategori_berita.index',compact('KategoriBerita'));
+    }
+  }

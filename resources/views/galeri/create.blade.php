@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header text-center bg-warning">Tambah Galeri</div>
+                <div class="card-header text-center bg-info">Tambah Galeri</div>
              <div class="card-body">   
                 <form method="post" action="{!! route('galeri.store') !!}"> 
                 @include('galeri.form')
@@ -23,7 +23,7 @@
     <script src="https://cdn.ckeditor.com/4.13.0/full/ckeditor.js"></script>
 <script>
     $( document ).ready(function() {
-        CKEDITOR.replace( 'isi' );
+        CKEDITOR.replace( 'keterangan' );
     });
     </script>
 @endsection

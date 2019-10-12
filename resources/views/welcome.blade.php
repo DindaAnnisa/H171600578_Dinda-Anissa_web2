@@ -82,7 +82,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    LARAVEL DINDA HARLEY
                 </div>
 
                 <div class="links">

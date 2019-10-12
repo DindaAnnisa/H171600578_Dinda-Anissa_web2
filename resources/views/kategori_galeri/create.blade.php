@@ -5,14 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-info" button class="btn btn-warning">Tambah Kategori Galeri</div>
-          
-                <div class="card-body">
-                    <form method="post" action="{!! route('kategori_galeri.store') !!}">
-                        @include('kategori_galeri.form')
-                    </form>
-                </div>
+                <div class="card-header text-center bg-info">Tambah Kategori Galeri</div>
+             <div class="card-body">   
+                <form method="post" action="{!! route('kategori_galeri.store') !!}"> 
+                @include('kategori_galeri.form')
+
+                </form>
+            </div>
             </div>
         </div>
-     </div>
+    </div>   
+</div>
+
 @endsection

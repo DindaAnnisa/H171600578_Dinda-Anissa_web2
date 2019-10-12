@@ -34,6 +34,11 @@
                          <label  class="col-md-10 col-form-label text-md-left">{!! $artikel->created_at->format('d/m/Y H:i:s') !!}</label>
                     </div>
 
+                    <div class="form-group row">
+                         <label  class="col-md-2 col-form-label text-md-right">Update</label>
+                         <label  class="col-md-10 col-form-label text-md-left">{!! $artikel->updated_at->format('d/m/Y H:i:s') !!}</label>
+                    </div>
+
                     
                     <div class="form-group row mb-0">
                         <div class="col-md-10 offset-md-2">

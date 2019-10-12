@@ -5,12 +5,15 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header text-center bg-warning">Tambah Pengumuman</div>
+                <div class="card-header  bg-warning">Tambah Pengumuman</div>
              <div class="card-body">   
-                <form method="post" action="{!! route('pengumuman.store') !!}"> 
-                @include('pengumuman.form')
 
-                </form>
+                {!! Form::open(['route' => 'pengumuman.store', 'method' => 'post']) !!}
+
+                        @include('pengumuman.form')
+
+                        {!! Form::close() !!} 
+
             </div>
             </div>
         </div>

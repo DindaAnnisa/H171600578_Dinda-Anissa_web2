@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Galeri</div>
+                <div class="card-header text-center bg-info">Artikel</div>
                 
                 <div class="card-body">
                     <div class="form-group row">
@@ -23,14 +23,13 @@
                          <label  class="col-md-10 col-form-label text-md-left">{!! $galeri->keterangan !!}</label>
                     </div>
 
-                     <div class="form-group row">
+                    <div class="form-group row">
                          <label  class="col-md-2 col-form-label text-md-right">Path</label>
-                         <label  class="col-md-10 col-form-label text-md-left">{!! $galeri->path !!}
-                         </label>
+                         <label  class="col-md-10 col-form-label text-md-left">{!! $galeri->path !!}</label>
                     </div>
 
-                    <div class="form-group row">
-                         <label  class="col-md-2 col-form-label text-md-right">Users Id</label>
+                     <div class="form-group row">
+                         <label  class="col-md-2 col-form-label text-md-right">User Id</label>
                          <label  class="col-md-10 col-form-label text-md-left">{!! $galeri->users_id !!}
                          </label>
                     </div>
@@ -43,7 +42,7 @@
                     
                     <div class="form-group row mb-0">
                         <div class="col-md-10 offset-md-2">
-                            <a hSref="{!! route('galeri.index')!!}" class="btn btn-primary">
+                            <a href="{!! route('galeri.index')!!}" class="btn btn-primary">
                                 Back
                             </a>
                         </div>
